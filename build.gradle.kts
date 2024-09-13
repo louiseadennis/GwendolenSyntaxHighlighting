@@ -119,3 +119,5 @@ tasks {
         channels = properties("pluginVersion").map { listOf(it.substringAfter('-', "").substringBefore('.').ifEmpty { "default" }) }
     }
 }
+
+sourceSets["main"].java.srcDirs("src/main/gen")

@@ -15,4 +15,20 @@
     <applicationListeners>
         <listener class="com.github.louiseadennis.gwendolensyntaxhighlighting.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Gwendolen File"
+                  implementationClass="language.GwendolenFileType"
+                  fieldName="INSTANCE"
+                  language="Gwendolen"
+                  extensions="gwen"/>
+        <lang.parserDefinition
+                language="Gwendolen"
+                implementationClass="language.GwendolenParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="Gwendolen"
+                implementationClass="language.GwendolenSyntaxHighlighterFactory"/>
+        <colorSettingsPage
+                implementation="language.GwendolenColourSettings"/>
+    </extensions>
 </idea-plugin>
